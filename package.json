@@ -29,6 +29,8 @@
     "gulp-size": "^3.0.0",
     "gulp-svgmin": "^2.2.0",
     "gulp-uglify": "^3.0.2",
+    "merge-stream": "^2.0.0",
+    "normalize.css": "^8.0.1",
     "opn": "^5.5.0"
   }
 }

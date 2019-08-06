@@ -1,18 +1,19 @@
 const gulp = require("gulp")
 const sass = require("gulp-sass")
 const connect = require("gulp-connect")
-var rename = require("gulp-rename")
+const merge = require("merge-stream")
+const rename = require("gulp-rename")
 
 gulp.task("sass", function() {
-    return gulp
-        .src(["./src/scss/*.scss"])
-        .pipe(
-            sass({
-                includePaths: ["./src/scss"],
-                outputStyle: "expanded"
-            })
-        )
-        .pipe(gulp.dest("./srv/css"))
+    const normalize = gulp.src("node_modules/normalize.css/normalize.css")
+    const scss = gulp.src(["./src/scss/*.scss"]).pipe(
+        sass({
+            includePaths: ["./src/scss"],
+            outputStyle: "expanded"
+        })
+    )
+
+    return merge(normalize, scss).pipe(gulp.dest("./srv/css"))
 })
 
 gulp.task("js", function() {
@@ -43,17 +44,18 @@ gulp.task("connect", function(done) {
 })
 
 gulp.task("livereload", function() {
-    gulp.src("./srv/**/*").pipe(connect.reload())
+    return gulp.src("./srv/**/*").pipe(connect.reload())
 })
 
-gulp.task("watch", function() {
+gulp.task("watch", function(done) {
     gulp.watch("./src/*.html", gulp.parallel("html"))
     gulp.watch("./src/js/*.js", gulp.parallel("js"))
     gulp.watch("./src/scss/*.scss", gulp.parallel("sass"))
     gulp.watch("./src/**/*", gulp.parallel("livereload"))
+    done()
 })
 
 gulp.task(
     "default",
-    gulp.parallel("connect", "connect:open", "watch", "sass", "js", "html")
+    gulp.parallel("connect", "connect:open", "watch", "js", "html")
 )
