@@ -1,0 +1,73 @@
+.cta {
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    margin: 100px 0;
+    background-color: #ecede9;
+    align-items: center;
+
+    // #########################################################################
+    // Elements
+    &__text-wrapper {
+        grid-column: 1;
+        padding: 8vw;
+        padding-left: 16vw;
+    }
+
+    &__heading {
+        margin-top: 0;
+        color: #000;
+    }
+
+    &__text {
+        line-height: 1.5;
+        margin-bottom: 40px;
+        color: #000;
+    }
+
+    &__button {
+        padding: 12px 20px;
+        background-color: #000;
+        color: #fff;
+        text-decoration: none;
+        transition: border-radius 750ms ease-in;
+
+        &:hover {
+            background-color: #333;
+            border-radius: 21px;
+        }
+    }
+
+    &__image {
+        grid-column: 2;
+        grid-row: 1;
+        max-width: 100%;
+    }
+
+    // #########################################################################
+    // Modifiers
+    &--red-heading {
+        .cta__heading {
+            color: #f08080;
+        }
+    }
+
+    &--secondary {
+        grid-template-columns: 30vw 35vw;
+        padding-left: 16vw;
+
+        .cta__text-wrapper {
+            grid-column: 2;
+            padding: 0;
+            padding-left: 30px;
+        }
+
+        .cta__heading {
+            font-size: 24px;
+        }
+
+        .cta__image {
+            grid-column: 1;
+            margin: 50px 0;
+        }
+    }
+}
