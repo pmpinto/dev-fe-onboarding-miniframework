@@ -1,6 +1,7 @@
 export default () => {
     // Component configs
     const configs = {
+        parentClassName: "js-cta-parent",
         triggerClassName: "js-floater-trigger",
         targetClassName: "js-floater-target",
         hiddenClassName: "cta__floater--hidden"
@@ -8,18 +9,35 @@ export default () => {
 
     // Get HTML elements
     const elements = {
-        trigger: document.querySelector(`.${configs.triggerClassName}`),
-        target: document.querySelector(`.${configs.targetClassName}`)
+        triggers: document.querySelectorAll(`.${configs.triggerClassName}`),
+        targets: document.querySelectorAll(`.${configs.targetClassName}`)
     }
 
     // #########################################################################
     // Methods
     const toggleTarget = event => {
+        const parent = event.target.closest(`.${configs.parentClassName}`)
+        const target = parent.querySelector(`.${configs.targetClassName}`)
+        const isHidden = target.classList.contains(configs.hiddenClassName)
+
         event.preventDefault()
-        elements.target.classList.toggle(configs.hiddenClassName)
+
+        closeAllTargets()
+
+        if (isHidden) {
+            target.classList.toggle(configs.hiddenClassName)
+        }
+    }
+
+    const closeAllTargets = () => {
+        for (const target of elements.targets) {
+            target.classList.add(configs.hiddenClassName)
+        }
     }
 
     // #########################################################################
     // Set event listeners
-    elements.trigger.addEventListener("click", toggleTarget)
+    for (const trigger of elements.triggers) {
+        trigger.addEventListener("click", toggleTarget)
+    }
 }

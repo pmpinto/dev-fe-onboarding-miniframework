@@ -7,7 +7,7 @@
     </head>
     <body>
         <!-- Normal state -->
-        <section class="cta">
+        <section class="cta js-cta-parent">
             <div class="cta__text-wrapper">
                 <h1 class="cta__heading">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -34,7 +34,7 @@
         </section>
 
         <!-- Red heading -->
-        <section class="cta cta--red-heading">
+        <section class="cta cta--red-heading js-cta-parent">
             <div class="cta__text-wrapper">
                 <h1 class="cta__heading">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -44,17 +44,24 @@
                     suscipit voluptatum facere laborum sunt dicta, culpa, ea
                     ipsam molestias mollitia earum reiciendis assumenda.
                 </p>
-                <a href="#" class="cta__button">Link button</a>
+                <a href="#" class="cta__button js-floater-trigger"
+                    >Link button</a
+                >
             </div>
             <img
                 src="img/landscape.jpeg"
                 alt="landscape photo"
                 class="cta__image"
             />
+            <div class="cta__floater cta__floater--hidden js-floater-target">
+                <div class="cta__floater-content">
+                    <p class="cta__floater-text">Contact us</p>
+                </div>
+            </div>
         </section>
 
         <!-- Secondary layout -->
-        <section class="cta cta--secondary">
+        <section class="cta cta--secondary js-cta-parent">
             <div class="cta__text-wrapper">
                 <h1 class="cta__heading">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -64,13 +71,20 @@
                     suscipit voluptatum facere laborum sunt dicta, culpa, ea
                     ipsam molestias mollitia earum reiciendis assumenda.
                 </p>
-                <a href="#" class="cta__button">Link button</a>
+                <a href="#" class="cta__button js-floater-trigger"
+                    >Link button</a
+                >
             </div>
             <img
                 src="img/landscape.jpeg"
                 alt="landscape photo"
                 class="cta__image"
             />
+            <div class="cta__floater cta__floater--hidden js-floater-target">
+                <div class="cta__floater-content">
+                    <p class="cta__floater-text">Contact us</p>
+                </div>
+            </div>
         </section>
 
         <script type="module" src="js/main.js"></script>
