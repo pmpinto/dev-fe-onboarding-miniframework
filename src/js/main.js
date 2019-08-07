@@ -1,6 +1,4 @@
-import {animatedScrollTo} from './es6-scroll-to.js';
+import cta from "./cta.js"
 
-document.querySelector('.title').innerHTML = 'Great success!'
-document.querySelector('.text').innerHTML = 'Javascript is working!'
-
-animatedScrollTo(500);
+// Init cta component
+cta()

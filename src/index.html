@@ -1,27 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-  <link rel="stylesheet" href="css/style.ss" type="text/css">
-  </head>
-  <body>
-      <div class="error" style="color:pink">
-          Looks like the styleguide is not being implemented correctly..
-      </div>
-      <div class="content">
-          <h1 class="title">
-              Hmm...
-          </h1>
-          <p class="text">
-              Something is wrong... <br> 
-              Looks like the Javascript code is not being executed. <br>
-              Fix me please.
-          </p>
-      </div>
-      <div class="success" style="color:white; position:absolute; top:580px">
-            Woohoo, CSS is working!
-        </div>
-      <script type="module" src="js/mayn.js"></script>
-  </body>
-</html> 
+    <head>
+        <meta charset="UTF-8" />
+        <title>Onboarding Dev Task – Chapter 2</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <!-- Normal state -->
+        <section class="cta js-cta-parent">
+            <div class="cta__text-wrapper">
+                <h1 class="cta__heading">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </h1>
+                <p class="cta__text">
+                    Perferendis explicabo porro laboriosam temporibus possimus
+                    suscipit voluptatum facere laborum sunt dicta, culpa, ea
+                    ipsam molestias mollitia earum reiciendis assumenda.
+                </p>
+                <a href="#" class="cta__button js-floater-trigger"
+                    >Link button</a
+                >
+            </div>
+            <img
+                src="img/landscape.jpeg"
+                alt="landscape photo"
+                class="cta__image"
+            />
+            <div class="cta__floater cta__floater--hidden js-floater-target">
+                <div class="cta__floater-content">
+                    <p class="cta__floater-text">Contact us</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Red heading -->
+        <section class="cta cta--red-heading js-cta-parent">
+            <div class="cta__text-wrapper">
+                <h1 class="cta__heading">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </h1>
+                <p class="cta__text">
+                    Perferendis explicabo porro laboriosam temporibus possimus
+                    suscipit voluptatum facere laborum sunt dicta, culpa, ea
+                    ipsam molestias mollitia earum reiciendis assumenda.
+                </p>
+                <a href="#" class="cta__button js-floater-trigger"
+                    >Link button</a
+                >
+            </div>
+            <img
+                src="img/landscape.jpeg"
+                alt="landscape photo"
+                class="cta__image"
+            />
+            <div class="cta__floater cta__floater--hidden js-floater-target">
+                <div class="cta__floater-content">
+                    <p class="cta__floater-text">Contact us</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secondary layout -->
+        <section class="cta cta--secondary js-cta-parent">
+            <div class="cta__text-wrapper">
+                <h1 class="cta__heading">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </h1>
+                <p class="cta__text">
+                    Perferendis explicabo porro laboriosam temporibus possimus
+                    suscipit voluptatum facere laborum sunt dicta, culpa, ea
+                    ipsam molestias mollitia earum reiciendis assumenda.
+                </p>
+                <a href="#" class="cta__button js-floater-trigger"
+                    >Link button</a
+                >
+            </div>
+            <img
+                src="img/landscape.jpeg"
+                alt="landscape photo"
+                class="cta__image"
+            />
+            <div class="cta__floater cta__floater--hidden js-floater-target">
+                <div class="cta__floater-content">
+                    <p class="cta__floater-text">Contact us</p>
+                </div>
+            </div>
+        </section>
+
+        <script type="module" src="js/main.js"></script>
+    </body>
+</html>
